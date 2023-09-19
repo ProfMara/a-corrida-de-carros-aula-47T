@@ -176,7 +176,7 @@ class Game{
             this.movendo = false;
         }
         if(player.fuel<=0){
-            gameState = 2;
+            this.gameOver();
         }
     }
 
@@ -317,6 +317,22 @@ class Game{
             //texto do botãozinho
             confirmButtonText:"Ok"
         })
+    }
+
+    gameOver(){
+        swal({
+            //titulo
+            title:"Que pena "+player.name+"😥!" ,
+            //texto
+            text:"Você perdeu seu combustivel!",
+            //o endereço da imagem
+            imageUrl:"https://media.tenor.com/bAPQ2tejx6YAAAAd/crying-minions.gif",
+            //o tamanho dela
+            imageSize:'300x300',
+            //texto do botãozinho
+            confirmButtonText:"Ok"
+        })
+        gameState = 2;
     }
    
 }   
